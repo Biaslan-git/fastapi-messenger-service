@@ -1,9 +1,9 @@
 from sqlalchemy import insert, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from .models import user_table
-from .schemas import UserInDB
-from .utils import hash_password, verify_password
+from src.auth.models import user_table
+from src.auth.schemas import UserInDB
+from src.auth.utils import hash_password, verify_password
 
 
 async def get_user(session: AsyncSession, username) -> UserInDB | None:

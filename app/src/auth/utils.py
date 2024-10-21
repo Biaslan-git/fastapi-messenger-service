@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from jose import JWTError, jwt
 
 from src.config import SECRET_KEY
-from .config import ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
+from src.auth.config import ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
