@@ -1,12 +1,19 @@
-
 services:
   fastapi:
     build: ./app
     env_file: .env
-    ports:
-      - 8000:8000
     depends_on:
       - db
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.prod.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - fastapi
+
   db:
     image: postgres:16
     ports:
