@@ -1,4 +1,4 @@
-### Start commands
+### Команды для запуска
 
 ```bash
 sudo docker compose up -d
