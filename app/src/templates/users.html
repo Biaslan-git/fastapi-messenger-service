@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<header class="bg-white">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <div class="flex lg:flex-1">
+      <a href="#" class="-m-1.5 p-1.5">
+        <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
+      </a>
+    </div>
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <span class="text-sm font-semibold leading-6 text-gray-900">{{ username }}</span>
+    </div>
+  </nav>
+</header>
+
+<ul class="max-w-xs flex flex-col" style="margin: 0 10%">
+  <span class="text-base text-xl">Пользователи</span>
+  {% for user in users %}
+    <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border border-gray-200 text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+      {{ user.username }}
+    </li>
+  {% else %}
+    Нет пользователей 
+  {% endfor %}
+</ul>
+
+<footer style="position: absolute; bottom: 0; right: 40%">
+    Телеграм бот для получения уведомлений
+</footer>
+{% endblock %}
