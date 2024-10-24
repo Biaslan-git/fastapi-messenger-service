@@ -13,7 +13,7 @@ templates = Jinja2Templates(directory='src/templates')
 
 @router.get('/signin')
 def get_signin_page(request: Request):
-    return templates.TemplateResponse('signin.html', {'request': request})
+    return templates.TemplateResponse('signin2.html', {'request': request})
 
 @router.post('/signin')
 def signin(
@@ -27,3 +27,7 @@ def signin(
 @router.get('/users')
 async def get_users_page(request: Request):
     return templates.TemplateResponse('users.html', {'request': request})
+
+@router.get('/test')
+async def get_test_page(request: Request):
+    return templates.TemplateResponse('test.html', {'request': request})
